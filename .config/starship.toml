@@ -1,0 +1,260 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
+#     
+format = """
+$os\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+[](fg:crust)
+$character"""
+right_format = """
+[](fg:crust)
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$status$cmd_duration\
+[](fg:crust)"""
+
+command_timeout = 1000
+
+#palette = 'gruvbox_dark'
+palette = 'aura_dark'
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[palettes.catppuccin_mocha]
+rosewater = "#F5E0DC"
+flamingo = "#F2CDCD"
+pink = "#F5C2E7"
+mauve = "#CBA6F7"
+red = "#F38BA8"
+maroon = "#EBA0AC"
+maroon_frappe = "#E64553"
+peach = "#FAB387"
+yellow = "#F9E2AF"
+green = "#A6E3A1"
+green_frappe = "#40A02B"
+teal = "#94E2D5"
+blue = "#87B0F9"
+sky = "#89DCEB"
+sapphire = "#74C7EC"
+lavender = "#B4BEFE"
+crust = "#11111B"
+mantle = "#181825"
+base = "#1E1E2E"
+surface0 = "#313244"
+surface1 = "#43465A"
+surface2 = "#565970"
+overlay0 = "#696D86"
+overlay1 = "#7B819D"
+overlay2 = "#8E95B3"
+text = "#C6D0F5"
+subtext0 = "#A1A8C9"
+subtext1 = "#B3BCDF"
+itermBG = "#15141b"
+
+[palettes.aura_dark]
+purple = "#a277ff"
+purple_soft = "#8464c6"
+purple_selected = "#29263c"
+lime = '#9dff65'
+green = "#61ffca"
+green_soft = "#54c59f"
+orange = "#ffca85"
+orange_soft = "#c7a06f"
+pink = "#f694ff"
+pink_soft = "#c17ac8"
+blue = "#82e2ff"
+blue_soft = "#6cb2c7"
+red = "#ff6767"
+red_soft = "#c55858"
+white = "#edecee"
+white_soft = "#bdbdbd"
+gray = "#6d6d6d"
+black = "#15141b"
+crust = "#11111B"
+mantle = "#181825"
+base = "#1E1E2E"
+surface0 = "#3b334b"
+surface1 = "#4d4d4d"
+surface2 = "#525156"
+overlay0 = "#696D86"
+overlay1 = "#7B819D"
+overlay2 = "#8E95B3"
+text = "#CfCAD7"
+subtext0 = "#adacae"
+subtext1 = "#BdB6De"
+accent35 = '#525156'        # activity bar inactive foreground,
+accent36 = '#a19c77'        # debugging background
+accent37 = '#353424'        # breakpoint frame highlight
+accent38 = '#29263c'        # primary-selection without alpha
+accent39 = '#211D26'
+
+# Section os - username - hostname
+
+[os]
+disabled = true
+style = "bg:surface0 fg:orange"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = false
+style_user = "bg:surface0 fg:orange"
+style_root = "bg:surface0 fg:orange"
+format = '[$user]($style)'
+
+[hostname]
+disabled = true
+ssh_only = false
+trim_at = '-'
+style = 'bold fg:orange bg:surface0'
+format = '[$ssh_symbol$hostname ]($style)'
+
+# section directory
+
+[directory]
+style = "fg:green bg:crust"
+format = "[$path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = false
+home_symbol = " "
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+# section git
+
+[git_branch]
+symbol = ""
+style = "bold fg:purple bg:crust"
+format = '[$symbol $branch ]($style)'
+
+[git_status]
+disabled = false
+stashed = '📦'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+style = "fg:purple bg:crust"
+format = '[($all_status$ahead_behind)]($style)'
+
+[git_metrics]
+disabled = false
+added_style = "fg:purple bg:crust"
+deleted_style = "fg:purple bg:crust"
+format = '([ 󰜄 $added]($added_style))([ 󱗝 $deleted]($deleted_style))'
+
+# section language
+
+[nodejs]
+symbol = ""
+style = "fg:pink bg:crust"
+format = '[$symbol( $version) ]($style)'
+
+[golang]
+symbol = ""
+style = "fg:pink bg:crust"
+format = '[$symbol( $version) ]($style)'
+
+[php]
+symbol = ""
+style = "fg:pink bg:crust"
+format = '[$symbol( $version) ]($style)'
+
+[python]
+symbol = ""
+style = "fg:pink bg:crust"
+format = '[$symbol( $version) ]($style)'
+
+#section docker context
+
+[docker_context]
+disabled = false
+only_with_files = false
+symbol = ""
+style = "bg:none"
+format = '[[ $symbol( $context) ](fg:blue_soft bg:none)]($style)'
+
+# section character
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:lime)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[](bold fg:lime)'
+vimcmd_replace_one_symbol = '[](bold fg:purple)'
+vimcmd_replace_symbol = '[](bold fg:purple)'
+vimcmd_visual_symbol = '[](bold fg:orange)'
+
+# right side section status
+
+[status]
+disabled = false
+symbol = "[ ✘ ](bold fg:red bg:crust)"
+success_symbol = "[ ✔ ](bold fg:lime bg:crust)"
+style = "bold fg:mantle bg:subtext1"
+format = "[](fg:subtext1 bg:none)[$status]($style)[](fg:subtext1 bg:crust)[$symbol]($style)"
+
+# section command duration
+
+[cmd_duration]
+disabled = false
+style = 'bold fg:crust bg:blue_soft'
+format = '[](fg:blue_soft bg:crust)[ $duration]($style)[](fg:blue_soft bg:crust)'
+
+# disabled time
+
+[time]
+disabled = true
+time_format = "%R"
+style = 'italic subtext1 bg:mantle'
+format = '[$time]($style)'
+
+[line_break]
+disabled = false

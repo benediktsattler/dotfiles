@@ -1,0 +1,3 @@
+.config/zed/.tmp*
+.config/zed/embeddings/*
+.zsh_history

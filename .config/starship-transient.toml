@@ -1,0 +1,117 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = false
+format = """
+$time\
+$character"""
+
+#palette = 'gruvbox_dark'
+palette = 'catppuccin_mocha'
+
+[palettes.catppuccin_mocha]
+rosewater = "#F5E0DC"
+flamingo = "#F2CDCD"
+pink = "#F5C2E7"
+mauve = "#CBA6F7"
+red = "#F38BA8"
+maroon = "#EBA0AC"
+maroon_frappe = "#E64553"
+peach = "#FAB387"
+yellow = "#F9E2AF"
+green = "#A6E3A1"
+green_frappe = "#40A02B"
+teal = "#94E2D5"
+blue = "#87B0F9"
+sky = "#89DCEB"
+sapphire = "#74C7EC"
+lavender = "#B4BEFE"
+crust = "#11111B"
+mantle = "#181825"
+base = "#1E1E2E"
+surface0 = "#313244"
+surface1 = "#43465A"
+surface2 = "#565970"
+overlay0 = "#696D86"
+overlay1 = "#7B819D"
+overlay2 = "#8E95B3"
+text = "#C6D0F5"
+subtext0 = "#A1A8C9"
+subtext1 = "#B3BCDF"
+itermBG = "#15141b"
+
+[palettes.aura_dark_soft]
+accent0 = '#0f0f0f'
+accent1 = '#a277ff'
+accent2 = '#61ffca'
+accent3 = '#ffca85'
+accent4 = '#9dff65'
+accent5 = '#ff6767'
+accent6 = '#f694ff'
+accent7 = '#edecee'
+accent8 = '#cdccce'
+accent9 = '#6d6d6d'
+accent10 = '#adacae'
+accent11 = '#141414'
+accent12 = '#21202e'
+accent13 = '#444444'
+accent15 = '#4d4d4d'
+accent21 = '#1c1b22'
+accent22 = '#4d466e'
+accent23 = '#3b334b'
+accent24 = '#1f1a27'
+accent25 = '#49c29a'
+accent28 = '#121016'
+accent29 = '#000000'
+accent30 = '#2d2b38'
+accent31 = '#ffca85'
+accent32 = '#82e2ff'
+accent33 = '#24222c'
+accent35 = '#525156' # activity bar inactive foreground,
+accent36 = '#a19c77' # debugging background
+accent37 = '#353424' # breakpoint frame highlight
+accent38 = '#29263c' # primary-selection without alpha
+accent39 = '#211D26'
+
+# section git
+
+[git_branch]
+symbol = ""
+style = "bg:mauve"
+format = '[[ $symbol $branch ](fg:base bg:mauve)]($style)'
+
+[git_status]
+style = "bg:mauve"
+format = '[[($all_status$ahead_behind )](fg:base bg:mauve)]($style)'
+
+# section character
+
+[character]
+disabled = false
+success_symbol = '[ ❯](bold fg:mauve)'
+error_symbol = '[ ❯](bold fg:mauve)'
+vimcmd_symbol = '[](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+vimcmd_replace_symbol = '[](bold fg:color_purple)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
+# right side section status
+
+[status]
+disabled = true
+symbol = "[ ✘ ](bold fg:maroon_frappe bg:base)"
+success_symbol = "[ ✔ ](bold fg:green_frappe bg:base)"
+style = "bold fg:base bg:overlay0"
+format = "[](fg:overlay0 bg:base)[$status]($style)[](fg:overlay0 bg:base)[$symbol]($style)"
+
+[cmd_duration]
+disabled = true
+style = 'bold fg:base bg:teal'
+format = '[](fg:overlay0 bg:base)[ $duration  ]($style)[](fg:overlay0 bg:base)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = 'bold underline sapphire'
+format = '[$time]($style)'
+
+[line_break]
+disabled = false

@@ -1,0 +1,11 @@
+#|<---------  No more than 50 chars  ---------->|
+#(If applied, this commit will...)
+
+#|<----------   Wrap each line at a max of 72 characters   ---------->|
+# Explain the problem that this commit is solving.
+# - Focus on why you are making this change
+# - Are there side effects or consequences of this change?
+
+# (Optional) Provide links or keys to any relevant tickets, articles
+# or other resources
+# Resolves: #123
